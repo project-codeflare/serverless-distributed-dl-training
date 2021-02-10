@@ -35,12 +35,12 @@ You can find examples [here](examples).
 
 To run the demo (e.g. mnist), just do:
 ```bash
-# 1. Have your code engine ready, e.g. 
+# 1. Connect to your code engine project, e.g.
 export KUBECONFIG=/Users/lchu/.bluemix/plugins/code-engine/horovod-5dc3ff50-23e7-46be-92b2-e2de2da9bd71.yaml
 # 2. Launch Ray cluster
 ray up -y --no-config-cache ray_cluster.yaml 
 # 3. Submit your training
 cd examples/mnist
-# Modify information as needed, e.g. change credentials in ray_mnist.py, change resouce allocation in ray_cluster.yaml, etc.
+### Modify information as needed, e.g. change credentials in ray_mnist.py, change resouce allocation in ray_cluster.yaml, etc. ###
 ray submit --no-config-cache ray_cluster.yaml ray_mnist.py
 ```
