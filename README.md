@@ -18,7 +18,7 @@ The **serverless** and **distributed** deep learning training is achieved by **r
 2. Prepare Ray Cluster file. Ray cluster is configured and provisioned by a single ray cluster yaml file. All cluster-related inforation (nodes spec, container image, resouce allocation, etc.) should be configured in this file. Here is a [template](examples/mnist/ray_cluster.yaml).
 3. Prepare training script. Modify your existing training script to use Horovod on Ray.
     1. Modify for Horovod. The modification varies a little bit by your favorite framework, but is very easy and straightforward. You can find more information on [Horovod with Tensorflow](https://horovod.readthedocs.io/en/stable/tensorflow.html), [Horovod with Tensorflow Keras](https://horovod.readthedocs.io/en/stable/keras.html), [Horovod with PyTorch](https://horovod.readthedocs.io/en/stable/pytorch.html) and [Horovod on MXNet](https://horovod.readthedocs.io/en/stable/mxnet.html).
-    2. Modify for Ray integration. Script for running on Horovod-Ray is slightly different from running on Horovod alone, and a few more modifications for ray integration is required. This is as simple as wrapping your code from previous step in a train() function and execute it with RayExecutor. You can find the example [here](examples/mnist/ray_mnist.yaml)
+    2. Modify for Ray integration. Script for running on Horovod-Ray is slightly different from running on Horovod alone, and a few more modifications for ray integration is required. This is as simple as wrapping your code from previous step in a train() function and execute it with RayExecutor. You can find the example [here](examples/mnist/ray_mnist.py)
 4. Run it! Running is as simple as a two-line script:
     ```bash
     # Launch Ray cluster
