@@ -8,7 +8,7 @@ This tutorial walks through the steps to train a deep learning model in a ***ser
 - **Ray**: provides a Ray cluster on Code Engine for easily running distributed applications.
 - **Horovod**: provides a distributed deep learning training framework for TensorFlow, Keras, PyTorch, and Apache MXNet.
 
-The ***serverless*** and ***distributed*** deep learning training is achieved by ***running Horovod code on a Ray cluster which launched in Code Engine***.
+The **serverless** and **distributed** deep learning training is achieved by **running Horovod code on a Ray cluster which launched in Code Engine**.
 
 ## Steps
 
@@ -29,6 +29,6 @@ The ***serverless*** and ***distributed*** deep learning training is achieved by
     You might have to wait couple minutes for the cluster launch to complete after running the first command, if you are launching it for the first time (as it takes time to pull the image and allocate the resources).
     
 ## Examples
-You can find examples [here](examples).
-[mnist](examples/mnist) contains an example of training Fashion MNIST model where data is consumed from COS and trained model is saved back to COS.
+You can find examples [here](examples).  
+[mnist](examples/mnist) contains an example of training Fashion MNIST model where data is consumed from COS and trained model is saved back to COS.  
 [mnist-transfer-learning](examples/mnist-transfer-learning) contains an example of doing transfer learning or fine-tuning or reusume-training where data is consumed from COS, pre-trained model is loaded from COS and trained model is saved back to COS.
