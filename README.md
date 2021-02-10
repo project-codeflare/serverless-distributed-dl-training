@@ -32,3 +32,15 @@ The **serverless** and **distributed** deep learning training is achieved by **r
 You can find examples [here](examples).  
 [mnist](examples/mnist) contains an example of training Fashion MNIST model where data is consumed from COS and trained model is saved back to COS.  
 [mnist-transfer-learning](examples/mnist-transfer-learning) contains an example of doing transfer learning or fine-tuning or reusume-training where data is consumed from COS, pre-trained model is loaded from COS and trained model is saved back to COS.
+
+To run the demo (e.g. mnist), just do:
+```bash
+# 1. Have your code engine ready, e.g. 
+export KUBECONFIG=/Users/lchu/.bluemix/plugins/code-engine/horovod-5dc3ff50-23e7-46be-92b2-e2de2da9bd71.yaml
+# 2. Launch Ray cluster
+ray up -y --no-config-cache ray_cluster.yaml 
+# 3. Submit your training
+cd examples/mnist
+# Modify information as needed, e.g. change credentials in ray_mnist.py, change resouce allocation in ray_cluster.yaml, etc.
+ray submit --no-config-cache ray_cluster.yaml ray_mnist.py
+```
