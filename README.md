@@ -14,7 +14,7 @@ The **serverless** and **distributed** deep learning training is achieved by **r
 
 1. Setup Code Engine. 
     1. Create a [Code Engine](https://cloud.ibm.com/catalog/services/codeengine) project in IBM Cloud.
-    2. Enable the project with Ray. Currently this can only be done by sharing the namespace id of your project with Code Engine team and ask their help to enable it.
+    2. Enable the project with Ray. Currently this can only be done by sharing the namespace id of your project with Code Engine team and ask their help to enable it. **Update: now you can do it yourself: https://www.ibm.com/cloud/blog/ray-on-ibm-cloud-code-engine**
 2. Prepare Ray Cluster file. Ray cluster is configured and provisioned by a single ray cluster yaml file. All cluster-related inforation (nodes spec, container image, resouce allocation, etc.) should be configured in this file. Here is a [template](examples/mnist/ray_cluster.yaml).
 3. Prepare training script. Modify your existing training script to use Horovod on Ray.
     1. Modify for Horovod. The modification varies a little bit by your favorite framework, but is very easy and straightforward. You can find more information on [Horovod with Tensorflow](https://horovod.readthedocs.io/en/stable/tensorflow.html), [Horovod with Tensorflow Keras](https://horovod.readthedocs.io/en/stable/keras.html), [Horovod with PyTorch](https://horovod.readthedocs.io/en/stable/pytorch.html) and [Horovod on MXNet](https://horovod.readthedocs.io/en/stable/mxnet.html).
